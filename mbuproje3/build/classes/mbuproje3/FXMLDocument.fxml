@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pencere"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mbuproje3.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="-43.0" layoutY="8.0" prefHeight="506.0" prefWidth="726.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Noktasal(Tekil) Yük">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="28.0" layoutY="27.0" prefHeight="17.0" prefWidth="81.0" text="Yük (q)      :">
+                           <font>
+                               <Font name="Arial" size="14.0" />
+                           </font></Label>
+                        <TextField fx:id="txt_yuknoktasal" layoutX="120.0" layoutY="23.0" />
+                        <TextField fx:id="txt_derinliknoktasal" layoutX="120.0" layoutY="57.0" />
+                        <Label layoutX="29.0" layoutY="61.0" prefHeight="17.0" prefWidth="91.0" text="Derinlik(z) :">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font></Label>
+                        <Label layoutX="28.0" layoutY="97.0" prefHeight="17.0" prefWidth="89.0" text="Uzaklık (r) :">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font></Label>
+                        <TextField fx:id="txt_uzakliknoktasal" layoutX="120.0" layoutY="93.0" />
+                        <Button fx:id="btn_nokta" layoutX="122.0" layoutY="146.0" mnemonicParsing="false" onAction="#btn_hesaplanoktasal" text="Hesapla" />
+                        <Label fx:id="lbl_noktasalsonuc" layoutX="211.0" layoutY="145.0" prefHeight="27.0" prefWidth="158.0" />
+                        <LineChart fx:id="noktasalgrfkyuk" layoutX="28.0" layoutY="220.0" prefHeight="183.0" prefWidth="305.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="noktasalgrfkuzaklik" layoutX="382.0" layoutY="220.0" prefHeight="174.0" prefWidth="376.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="noktasalgrfkderinlik" layoutX="375.0" layoutY="22.0" prefHeight="164.0" prefWidth="383.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Üniform Çizgisel Yük">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="19.0" layoutY="28.0" prefHeight="17.0" prefWidth="73.0" text="Yük (q)   :" />
+                        <Label layoutX="19.0" layoutY="66.0" prefHeight="17.0" prefWidth="73.0" text="Derinlik (z)  :" />
+                        <Label layoutX="19.0" layoutY="107.0" prefHeight="17.0" prefWidth="90.0" text="Uzaklık (x) :" />
+                        <TextField fx:id="txt_yukcizgisel" layoutX="128.0" layoutY="24.0" />
+                        <TextField fx:id="txt_derinlikcizgisel" layoutX="128.0" layoutY="62.0" />
+                        <TextField fx:id="txt_uzaklikcizgisel" layoutX="128.0" layoutY="103.0" />
+                        <Button fx:id="btn_cizgi" layoutX="128.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn_hesaplacizgisel" text="Hesapla" />
+                        <Label fx:id="lbl_sonuccizgisel" layoutX="213.0" layoutY="149.0" prefHeight="28.0" prefWidth="129.0" />
+                        <LineChart fx:id="cizgiselgrfkyuk" layoutX="16.0" layoutY="221.0" prefHeight="152.0" prefWidth="328.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="cizgiselgrfkderinlik" layoutX="391.0" layoutY="221.0" prefHeight="152.0" prefWidth="328.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="cizgiselgrfkuzaklik" layoutX="391.0" layoutY="23.0" prefHeight="152.0" prefWidth="328.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Üniform Şerit Yük">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="29.0" prefHeight="17.0" prefWidth="91.0" text="Yük (q)  :" />
+                        <Label layoutX="20.0" layoutY="67.0" prefHeight="17.0" prefWidth="58.0" text="A açısı :" />
+                        <Label layoutX="20.0" layoutY="105.0" prefHeight="17.0" prefWidth="67.0" text="B açısı :" />
+                        <TextField fx:id="txt_yukserit" layoutX="96.0" layoutY="25.0" />
+                        <TextField fx:id="txt_aciAserit" layoutX="96.0" layoutY="63.0" />
+                        <TextField fx:id="txt_aciBserit" layoutX="96.0" layoutY="101.0" />
+                        <Button fx:id="btn_serit" layoutX="193.0" layoutY="158.0" mnemonicParsing="false" onAction="#btn_hesaplaserit" text="Hesapla" />
+                        <Label fx:id="lbl_sonucserit" layoutX="296.0" layoutY="29.0" prefHeight="17.0" prefWidth="147.0" />
+                        <LineChart fx:id="seritgrfkyuk" layoutX="29.0" layoutY="239.0" prefHeight="164.0" prefWidth="337.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="seritgrfkAcia" layoutX="398.0" layoutY="239.0" prefHeight="164.0" prefWidth="337.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="seritgrfkAcib" layoutX="398.0" layoutY="19.0" prefHeight="164.0" prefWidth="337.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Üçgen Şerit Yük">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="29.0" layoutY="39.0" prefHeight="17.0" prefWidth="93.0" text="Yük (q) :" />
+                        <Label layoutX="29.0" layoutY="77.0" prefHeight="17.0" prefWidth="60.0" text="En  (B) :" />
+                        <Label layoutX="29.0" layoutY="113.0" text="Uzaklık(x)  :" />
+                        <Label layoutX="29.0" layoutY="147.0" prefHeight="17.0" prefWidth="63.0" text="Alfa Açısı :" />
+                        <Label layoutX="29.0" layoutY="186.0" text="Beta Açısı :" />
+                        <TextField fx:id="txt_yukucgenserit" layoutX="122.0" layoutY="35.0" />
+                        <TextField fx:id="txt_enucgenserit" layoutX="122.0" layoutY="73.0" />
+                        <TextField fx:id="txt_uzaklikucgenserit" layoutX="122.0" layoutY="109.0" />
+                        <TextField fx:id="txt_aciAucgenserit" layoutX="122.0" layoutY="143.0" />
+                        <TextField fx:id="txt_aciBucgenserit" layoutX="122.0" layoutY="182.0" />
+                        <Button fx:id="btn_ucgen" layoutX="212.0" layoutY="226.0" mnemonicParsing="false" onAction="#btn_hesaplaucgen" text="Hesapla" />
+                        <Label fx:id="lbl_sonucucgen" layoutX="329.0" layoutY="39.0" prefHeight="17.0" prefWidth="176.0" />
+                        <LineChart fx:id="ucgengrfkyuk" layoutX="29.0" layoutY="285.0" prefHeight="167.0" prefWidth="308.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="ucgengrfkuzaklik" layoutX="406.0" layoutY="285.0" prefHeight="167.0" prefWidth="308.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="ucgengrfken" layoutX="406.0" layoutY="26.0" prefHeight="167.0" prefWidth="308.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Üniform Yüklü Daire Alan">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="37.0" prefHeight="17.0" prefWidth="93.0" text="Yük (q) :" />
+                        <Label layoutX="15.0" layoutY="70.0" prefHeight="17.0" prefWidth="76.0" text="Yarıçap :" />
+                        <Label layoutX="15.0" layoutY="108.0" prefHeight="17.0" prefWidth="85.0" text="Derinlik :" />
+                        <TextField fx:id="txt_yukdaire" layoutX="100.0" layoutY="33.0" />
+                        <TextField fx:id="txt_yaricapdaire" layoutX="100.0" layoutY="66.0" />
+                        <TextField fx:id="txt_derinlikdaire" layoutX="100.0" layoutY="104.0" />
+                        <Button fx:id="btn_daire" layoutX="197.0" layoutY="156.0" mnemonicParsing="false" onAction="#btn_hesapladaire" text="Button" />
+                        <Label fx:id="lbl_sonucdaire" layoutX="290.0" layoutY="37.0" prefHeight="17.0" prefWidth="141.0" />
+                        <LineChart fx:id="dairegrfkyuk" layoutX="18.0" layoutY="269.0" prefHeight="165.0" prefWidth="345.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="dairegrfkyaricap" layoutX="403.0" layoutY="269.0" prefHeight="165.0" prefWidth="351.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="dairegrfkderinlik" layoutX="400.0" layoutY="43.0" prefHeight="165.0" prefWidth="358.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Üniform Yüklü Dikdörtgen Alan">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="34.0" layoutY="31.0" prefHeight="17.0" prefWidth="47.0" text="Yük (q):" />
+                        <Label layoutX="34.0" layoutY="62.0" prefHeight="17.0" prefWidth="46.0" text="B        :" />
+                        <Label layoutX="34.0" layoutY="95.0" prefHeight="17.0" prefWidth="47.0" text="A        :" />
+                        <TextField fx:id="txt_yukdikdortgen" layoutX="101.0" layoutY="27.0" />
+                        <TextField fx:id="txt_dikdortgenB" layoutX="101.0" layoutY="58.0" />
+                        <TextField fx:id="txt_dikdortgenA" layoutX="101.0" layoutY="91.0" />
+                        <Button fx:id="btn_dikdortgen" layoutX="101.0" layoutY="183.0" mnemonicParsing="false" onAction="#btn_hesapdikdortgen" text="Hesapla" />
+                        <Label fx:id="lbl_dikdortgensonuc" layoutX="176.0" layoutY="187.0" prefHeight="17.0" prefWidth="109.0" />
+                        <Label layoutX="34.0" layoutY="135.0" prefHeight="17.0" prefWidth="48.0" text="Z     :" />
+                        <TextField fx:id="txt_dikdortgenZ" layoutX="101.0" layoutY="131.0" />
+                        <LineChart fx:id="dikdortgengrfkyuk" layoutX="34.0" layoutY="271.0" prefHeight="163.0" prefWidth="322.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="dikdortgengrfkB" layoutX="413.0" layoutY="271.0" prefHeight="163.0" prefWidth="322.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="dikdortgengrfkA" layoutX="413.0" layoutY="31.0" prefHeight="163.0" prefWidth="322.0">
+                           <xAxis>
+                              <NumberAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
